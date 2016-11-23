@@ -41,7 +41,7 @@ struct OutputStreams{
 };
 
 
-vector<string> ClassList = {"uThread", "kTheead", "Cluster", "Connection", "Mutex", "OwnerLock", "ConditionVariable", "Semaphore", "uThreadPool"};
+vector<string> ClassList = {"uThread", "kThread", "Cluster", "Connection", "Mutex", "OwnerLock", "ConditionVariable", "Semaphore", "uThreadPool"};
 
 /** Matchers **/
 
