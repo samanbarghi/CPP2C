@@ -14,7 +14,7 @@
 #include <set>
 #include <sstream>
 #include <vector>
-#include <mutex>
+#include <map>
 #include <tuple>
 
 using namespace std;
@@ -42,6 +42,8 @@ struct OutputStreams{
 
 
 vector<string> ClassList = {"uThread", "kThread", "Cluster", "Connection", "Mutex", "OwnerLock", "ConditionVariable", "Semaphore", "uThreadPool"};
+
+map<string, int> funcList;
 
 /** Matchers **/
 
@@ -144,7 +146,18 @@ public:
 
 
 			std::stringstream funcname;
-			funcname << returnType << " " << className << methodName << "(" << self;
+			funcname << returnType << " " << className << methodName;
+
+			auto it = funcList.find(funcname.str());
+
+			if(it != funcList.end()){
+				it->second++;
+				funcname << "_" << it->second ;
+			}else{
+				funcList[funcname.str()] = 0;
+			}
+
+			funcname << "(" << self;
 
 			for(unsigned int i=0; i<cmd->getNumParams(); i++)
 			{

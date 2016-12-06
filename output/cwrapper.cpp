@@ -13,7 +13,7 @@ WMutex* Mutex_create(){
 _Bool Mutex_acquire(WMutex* self){
     return reinterpret_cast<Mutex*>(self)->acquire(); 
 }
-_Bool Mutex_acquire(WMutex* self){
+_Bool Mutex_acquire_1(WMutex* self){
     return reinterpret_cast<Mutex*>(self)->acquire(); 
 }
 void Mutex_release(WMutex* self){
@@ -67,7 +67,7 @@ void Semaphore_destroy(WSemaphore* self){
 WuThread* uThread_create(WuThread* self, size_t ss, _Bool joinable){
     return reinterpret_cast<WuThread*>(uThread::create(ss, joinable)); 
 }
-WuThread* uThread_create(WuThread* self, _Bool joinable){
+WuThread* uThread_create_1(WuThread* self, _Bool joinable){
     return reinterpret_cast<WuThread*>(uThread::create(joinable)); 
 }
 void uThread_start(WuThread* self, WCluster* cluster, ptr_t func, ptr_t arg1, ptr_t arg2, ptr_t arg3){
@@ -142,10 +142,10 @@ uint kThread_getTotalNumberOfkThreads(WkThread* self){
 WConnection* Connection_create(){
     return reinterpret_cast<WConnection*>( new Connection()); 
 }
-WConnection* Connection_create(int fd){
+WConnection* Connection_create_1(int fd){
     return reinterpret_cast<WConnection*>( new Connection(fd)); 
 }
-WConnection* Connection_create(int domainint typeint protocol){
+WConnection* Connection_create_2(int domainint typeint protocol){
     return reinterpret_cast<WConnection*>( new Connection(domaintypeprotocol)); 
 }
 void Connection_destroy(WConnection* self){
