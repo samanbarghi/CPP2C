@@ -189,7 +189,7 @@ public:
 			OS.BodyOS << bodyEnd << "; \n}\n" ;
 		}
 	}
-	virtual void onEndOfTranslationUnit(){/*use this later to sync with db?*/}
+	virtual void onEndOfTranslationUnit(){}
 private:
 	OutputStreams& OS;
 
@@ -310,6 +310,6 @@ int main(int argc, const char **argv) {
 	ClangTool Tool(op.getCompilations(), op.getSourcePathList());
 
 
-	// run the Clang Tool, creating a new FrontendAction (explained below)
+	// run the Clang Tool, creating a new FrontendAction
 	return Tool.run(newFrontendActionFactory<MyFrontendAction>().get());
 }
