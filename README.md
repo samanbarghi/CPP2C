@@ -1,6 +1,6 @@
 # CPP2C
 This is simple tool to generate a C interface from C++ source code using clang libtooling. CPP2C currently is a proof of concept, 
-and only applies to [https://github.com/samanbarghi/uThreads](https://github.com/samanbarghi/uThreads), to generate the C interface. 
+and only applies to [https://github.com/samanbarghi/uThreads](https://github.com/samanbarghi/uThreads), to generate the C interface. The code is explained in details in [this blog post](http://samanbarghi.com/blog/2016/12/06/generate-c-interface-from-c-source-code-using-clang-libtooling/).
 
 ## Building and Installation
 ```
